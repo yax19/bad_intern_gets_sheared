@@ -46,6 +46,8 @@ This scenario is designed to help practice several skills that you will need wor
 
 ### Steps
 
+Working in the ```starter_code``` folder:
+
 1. Install required node packages (```npm i```)
 2. Copy the ```.env-sample``` file to ```.env```
 3. Update ```.env``` with the correct server addresses, credentials, and values
