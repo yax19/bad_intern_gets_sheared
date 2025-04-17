@@ -1,0 +1,39 @@
+<%- include('../partials/_header.ejs') %> 
+<div class="row">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/sheep/">Sheep</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><%= title %></li>
+            </ol>
+          </nav>
+    </div>
+</div>
+<div class="row">
+  <div class="col">
+    <form action="/sheep/" method="POST">
+        <div class="row mt-3">
+            <div class="col-6">
+        <label class="form-label" for="name">Name:</label>
+        <input class="form-control" type="text" name="name" id="name" />
+    </div>
+    <div class="col-6">
+        <label class="form-label" for="breed">Breed:</label>
+        <select class="form-control" id="breed" name="breed">
+            <% breeds.forEach((breed)=>{ %>
+                <option value="<%= breed._id %>"><%= breed.name %></option>
+            <% }) %> 
+        </select>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col">
+        <button type="submit">Add Sheep</button>
+    </div>
+</div>
+    </form>
+  </div>
+</div>
+  
+  <%- include('../partials/_footer.ejs') %> 

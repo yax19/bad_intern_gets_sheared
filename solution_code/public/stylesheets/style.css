@@ -1,0 +1,17 @@
+.shearStatusIcon {
+    max-width: 20px;
+}
+
+.sheepTechLogo {
+    height: 40px;
+}
+
+.sheepActions {
+    display:flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.bigSheep {
+    max-width: 400px;
+}

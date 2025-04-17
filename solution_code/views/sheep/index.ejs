@@ -1,0 +1,54 @@
+<%- include('../partials/_header.ejs') %> 
+<div class="row">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/sheep/">Sheep</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><%= title %></li>
+            </ol>
+          </nav>
+    </div>
+</div>
+<div class="row">
+  <div class="col">
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Breed</th>
+          <th>Sheared</th>
+          <th class="sheepActions">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% sheep.forEach((oneSheep)=>{ %>
+          <tr>
+            <td><%= oneSheep.name %></td>
+            <td><%= oneSheep.breed.name %></td>
+            <td><% if(oneSheep.shorn == true){ %>
+                <img src="/images/check.png" alt="Sheared" class="shearStatusIcon"/>            
+            <% } %>
+            </td>
+            <td class="sheepActions">
+                <% if(oneSheep.shorn == true){ %>
+                    <form action="/sheep/<%= oneSheep._id %>/mark/unsheared/?_method=PUT" method="POST">
+                        <button type="submit" class="btn btn-sm btn-warning">Mark Unsheared</button>
+                    </form>            
+                <% }else{ %>
+                    <form action="/sheep/<%= oneSheep._id %>/mark/sheared/?_method=PUT" method="POST">
+                        <button type="submit" class="btn btn-sm btn-primary">Mark Sheared</button>
+                    </form>
+                <% } %>
+                <form action="/sheep/<%= oneSheep._id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                </form>
+            </td>
+          </tr>
+      <% }) %> 
+      </tbody>
+    </table>
+  </div>
+</div>
+  
+  <%- include('../partials/_footer.ejs') %> 
