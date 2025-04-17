@@ -1,0 +1,27 @@
+<%- include('../partials/_header.ejs') %> 
+
+<div class="row">
+  <div class="col">
+    <form action="/auth/sign-in" method="POST">
+
+      <div class="row mt-3">
+        <div class="col-6">
+          <label class="form-label" for="username">Username:</label>
+          <input type="text" class="form-control" name="username" id="username" required />
+        </div>
+        <div class="col-6">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" class="form-control" name="password" id="password" required />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </div>
+  
+    </form>
+  </div>
+</div>
+  
+  <%- include('../partials/_footer.ejs') %> 
