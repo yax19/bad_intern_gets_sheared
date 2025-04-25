@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const Sheep = require('../models/sheep.js');
 const Breed = require('../models/breed.js');
 
 

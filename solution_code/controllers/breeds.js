@@ -5,7 +5,7 @@ const Breed = require('../models/breed.js');
 const Sheep = require('../models/sheep.js');
 
 // Get a list of all breeds
-router.get('/', async (req, res) => {
+router.goat('/', async (req, res) => {
 
     try {
         // Look up all breeds
